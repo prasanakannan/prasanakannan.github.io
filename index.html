@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prasana K – AI/ML and Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAF1F5; --surface:#F6F9FB; --ink:#12263A; --muted:#4D6275; --line:#C5D4DE;
+  --ozone:#2458D6; --haze:#B8620A; --on-accent:#FFFFFF;
+  --p1:36,88,214; --p2:224,138,30;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1B28; --surface:#152433; --ink:#E6EEF5; --muted:#9DB1C3; --line:#2A3E52;
+    --ozone:#7FA6FF; --haze:#F0A24A; --on-accent:#0F1B28; --p1:127,166,255; --p2:240,162,74;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1B28; --surface:#152433; --ink:#E6EEF5; --muted:#9DB1C3; --line:#2A3E52;
+  --ozone:#7FA6FF; --haze:#F0A24A; --on-accent:#0F1B28; --p1:127,166,255; --p2:240,162,74;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",Calibri,Arial,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Arial,sans-serif;margin:0;letter-spacing:-.02em;line-height:1.05}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ozone);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;gap:20px;align-items:center;justify-content:space-between;height:56px}
+header.nav b{font-family:"Bricolage Grotesque",Arial,sans-serif;font-size:19px}
+nav{display:flex;gap:20px;font-size:15px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.hero{position:relative;min-height:calc(100vh - 56px);min-height:calc(100svh - 56px);display:flex;align-items:center;overflow:hidden}
+#sky{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding-top:56px;padding-bottom:56px}
+.hero h1{font-size:clamp(56px,13vw,148px);font-weight:800}
+.hero p.lead{max-width:34em;font-size:clamp(18px,2.2vw,22px);margin:24px 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:500;border:1.5px solid var(--ink)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{background:var(--ozone);border-color:var(--ozone);color:var(--on-accent)}
+.legend{margin-top:36px;font-size:14px;color:var(--muted);display:flex;gap:20px;flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(34px,5vw,52px);font-weight:700;margin-bottom:40px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+.about p{margin:0 0 18px;max-width:38em}
+.facts{display:grid;gap:22px;align-content:start}
+.facts div{border-left:3px solid var(--haze);padding-left:16px}
+.facts strong{display:block;font:800 34px/1.1 "Bricolage Grotesque",Arial,sans-serif}
+.facts span{color:var(--muted);font-size:15px}
+.proj{display:grid;grid-template-columns:200px 1fr;gap:12px 40px;padding:36px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj .meta{color:var(--muted);font-size:15px}
+.proj h3{font-size:28px;font-weight:700;margin-bottom:12px}
+.proj p{margin:0 0 14px;max-width:40em}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 13px;font-size:14px}
+.tl{list-style:none;margin:0;padding:0 0 0 28px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding-bottom:40px}
+.tl li::before{content:"";position:absolute;left:-37px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--ozone);border:3px solid var(--bg)}
+.tl h3{font-size:24px;font-weight:700}
+.tl .when{color:var(--muted);font-size:15px;margin:2px 0 10px}
+.tl ul{margin:0;padding-left:18px;max-width:42em}
+.tl ul li{padding:0 0 6px}
+.tl ul li::before{display:none}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px 40px}
+.skills h3{font-size:20px;margin-bottom:12px}
+.ach{list-style:none;padding:0;margin:0;display:grid;gap:18px;max-width:40em}
+.ach li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.contact a.big{font:700 clamp(26px,5vw,52px)/1.2 "Bricolage Grotesque",Arial,sans-serif;word-break:break-all;text-decoration-thickness:3px;text-underline-offset:8px;text-decoration-color:var(--haze)}
+.contact p{color:var(--muted);margin:18px 0 0}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 14px;font:inherit;cursor:pointer}
+@media(max-width:760px){
+  .about,.proj{grid-template-columns:1fr}
+  section{padding:68px 0}
+  header.nav b{display:none}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <b>Prasana K</b>
+  <nav aria-label="Sections"><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<div class="hero">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1>Prasana K</h1>
+    <p class="lead">I build web apps powered by machine learning, from the data pipeline to the React screen people actually use.</p>
+    <div class="btns">
+      <a class="btn main" href="#work">See my projects</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+    <div class="legend" aria-hidden="true">
+      <span><i style="background:rgb(var(--p1))"></i>Ozone (O₃)</span>
+      <span><i style="background:rgb(var(--p2))"></i>Nitrogen dioxide (NO₂)</span>
+      <span>Move your cursor through the air</span>
+    </div>
+  </div>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div class="about">
+    <div>
+      <p>I’m a Computer Science and Business Systems graduate from R.M.K. Engineering College in Chennai. I’ve worked across the full software cycle: analysis, design, coding, testing and deployment.</p>
+      <p>My strongest work sits where AI meets the web. I train models, wrap them in REST APIs, and build front ends that respond in real time. I’m comfortable translating a client’s requirements into something that runs.</p>
+      <p>Outside code, I edit video, watch a lot of cinema, and stay active at the gym.</p>
+    </div>
+    <div class="facts">
+      <div><strong>8,000+</strong><span>teams in Naan Mudhalvan Niral Thiruvizha 2023, where I was shortlisted</span></div>
+      <div><strong>35%</strong><span>faster performance on the PlantSense front end</span></div>
+      <div><strong>20%</strong><span>fewer misidentifications with a leaf-shape CNN</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2>Projects</h2>
+  <article class="proj">
+    <div class="meta">Full-stack and machine learning</div>
+    <div>
+      <h3>AirQ Intelligence</h3>
+      <p>A web app that forecasts ozone and nitrogen dioxide levels. It pulls Sentinel-5P/TROPOMI satellite data and ERA5 weather data through REST API pipelines, then predicts short-term air quality with ConvLSTM and Transformer models.</p>
+      <p>An AI chatbot handles plain-language questions, connecting front-end requests to model inference through REST endpoints.</p>
+      <ul class="tags"><li>Python</li><li>ConvLSTM</li><li>Transformers</li><li>REST APIs</li><li>Satellite data</li></ul>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="meta">Niral Thiruvizha, 2024–2025</div>
+    <div>
+      <h3>PlantSense</h3>
+      <p>Identifies plants from a photo of their leaves. I handled preprocessing, training and testing end to end, then built a React.js front end for real-time image classification that runs 35% faster after optimization.</p>
+      <p>The CNN cut misidentification errors by 20%, which supports more sustainable plant care.</p>
+      <ul class="tags"><li>CNN</li><li>TensorFlow</li><li>React.js</li><li>Image classification</li></ul>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="meta">Patent application</div>
+    <div>
+      <h3>FreshBox AI</h3>
+      <p>I led the patent application process for this idea. Shortlisted in the IPD Project Scheme, 2025.</p>
+    </div>
+  </article>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <ol class="tl">
+    <li>
+      <h3>IoT Intern, Pantech E-Learning</h3>
+      <div class="when">2023</div>
+      <ul>
+        <li>Built automation solutions for smart devices using IoT technologies.</li>
+        <li>Integrated cloud storage and analytics to keep IoT systems running smoothly.</li>
+        <li>Worked from requirements through to deployment support.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Web Development Intern, Kalam Foundation</h3>
+      <div class="when">2021–2022, Coimbatore</div>
+      <ul>
+        <li>Improved website performance by 30% with HTML, CSS and JavaScript.</li>
+        <li>Led a team building new features, turning requirements into working modules.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>B.Tech, Computer Science and Business Systems</h3>
+      <div class="when">2021–2025, R.M.K. Engineering College, CGPA 7.12 / 10</div>
+    </li>
+  </ol>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Languages</h3><ul class="tags"><li>Python</li><li>Java</li><li>JavaScript</li><li>C++ (advanced)</li><li>SQL</li></ul></div>
+    <div><h3>Web and APIs</h3><ul class="tags"><li>React.js</li><li>REST APIs</li><li>HTML</li><li>CSS</li></ul></div>
+    <div><h3>Data and ML</h3><ul class="tags"><li>NumPy</li><li>Pandas</li><li>TensorFlow</li><li>MySQL</li><li>Data pipelines</li></ul></div>
+    <div><h3>Tools and ways of working</h3><ul class="tags"><li>Git</li><li>VS Code</li><li>Jupyter</li><li>Figma</li><li>Agile</li><li>Data structures and algorithms</li></ul></div>
+  </div>
+</div></section>
+
+<section id="achievements"><div class="wrap">
+  <h2>Achievements</h2>
+  <ul class="ach">
+    <li>Shortlisted in the IPD Project Scheme, 2025.</li>
+    <li>Led the patent application process for FreshBox AI.</li>
+    <li>Shortlisted among 8,000+ teams in Naan Mudhalvan Niral Thiruvizha, 2023.</li>
+  </ul>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let’s work together</h2>
+  <a class="big" href="mailto:prasana2479@gmail.com">prasana2479@gmail.com</a>
+  <p>Phone: <a href="tel:+919344912739">+91 93449 12739</a>. Based in Padi, Chennai. I speak English and Tamil.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Prasana K</span>
+  <button id="theme" type="button">Switch theme</button>
+</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById("theme");
+  btn.addEventListener("click",function(){
+    var dark=root.dataset.theme?root.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme=dark?"light":"dark";
+  });
+  var c=document.getElementById("sky"),x=c.getContext("2d"),W,H,ps=[],m={x:-999,y:-999};
+  var still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function col(v){return "rgb("+getComputedStyle(root).getPropertyValue(v).trim()+")";}
+  function size(){
+    var r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);
+    W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    var n=Math.round(Math.min(150,W*H/9000));ps=[];
+    for(var i=0;i<n;i++)ps.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.3)*.4,vy:(Math.random()-.5)*.2,r:2+Math.random()*5,t:Math.random()<.55?0:1});
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    var a=col("--p1"),b=col("--p2");
+    for(var i=0;i<ps.length;i++){
+      var p=ps[i];
+      if(!still){
+        var dx=p.x-m.x,dy=p.y-m.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<140&&d>0){p.vx+=dx/d*.12;p.vy+=dy/d*.12;}
+        p.vx*=.985;p.vy*=.985;
+        p.vx+=.004;
+        p.x+=p.vx;p.y+=p.vy;
+        if(p.x>W+10)p.x=-10;if(p.x<-10)p.x=W+10;
+        if(p.y>H+10)p.y=-10;if(p.y<-10)p.y=H+10;
+      }
+      x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);
+      x.fillStyle=p.t?b:a;x.globalAlpha=.55;x.fill();
+    }
+    x.globalAlpha=1;
+    if(!still)requestAnimationFrame(draw);
+  }
+  addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top;});
+  addEventListener("resize",function(){size();if(still)draw();});
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){if(still)draw();});
+  size();draw();
+})();
+</script>
+</body>
+</html>
